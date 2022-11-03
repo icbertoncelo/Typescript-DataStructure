@@ -4,6 +4,7 @@ export interface IQueueRepository<T> {
   peek: () => undefined | T;
   isEmpty: () => boolean;
   size: () => number;
+  clear: () => void;
   toString: () => string;
 }
 

@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/src/data-structure/Stack.ts",
+      "program": "${workspaceFolder}/src/data-structure/Deck/index.ts",
       "outFiles": [
         "${workspaceFolder}/**/*.js"
       ]
