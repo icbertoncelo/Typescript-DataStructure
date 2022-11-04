@@ -33,7 +33,7 @@ export class Queue<T> implements IQueueRepository<T> {
   }
 
   isEmpty() {
-    return this.count - this.lowestCount === 0;
+    return this.size() === 0;
   }
 
   size() {
