@@ -49,11 +49,11 @@ export class Queue<T> implements IQueueRepository<T> {
   toString() {
     if (this.isEmpty()) return "";
 
-    let stackString = `${this.items[this.lowestCount]}`;
+    let queueString = this.items[this.lowestCount].toString();
     for (let i = this.lowestCount + 1; i < this.count; i++) {
-      stackString = `${stackString},${this.items[i]}`;
+      queueString = `${queueString},${this.items[i]}`;
     }
 
-    return stackString;
+    return queueString;
   }
 }

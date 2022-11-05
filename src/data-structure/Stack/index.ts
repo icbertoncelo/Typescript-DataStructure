@@ -46,7 +46,7 @@ export class Stack<T> implements IStackRepository<T> {
   toString() {
     if (this.isEmpty()) return "";
 
-    let stackString = `${this.items[0]}`;
+    let stackString = this.items[0].toString();
     for (let i = 1; i < this.count; i++) {
       stackString = `${stackString},${this.items[i]}`;
     }

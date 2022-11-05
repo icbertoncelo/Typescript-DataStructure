@@ -85,11 +85,11 @@ export class Deck<T> implements IDeckRepository<T> {
   toString() {
     if (this.isEmpty()) return "";
 
-    let stackString = `${this.items[this.lowestCount]}`;
+    let deckString = this.items[this.lowestCount].toString();
     for (let i = this.lowestCount + 1; i < this.count; i++) {
-      stackString = `${stackString},${this.items[i]}`;
+      deckString = `${deckString},${this.items[i]}`;
     }
 
-    return stackString;
+    return deckString;
   }
 }
