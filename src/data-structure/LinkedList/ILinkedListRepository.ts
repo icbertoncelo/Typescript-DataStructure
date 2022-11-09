@@ -10,5 +10,6 @@ export interface ILinkedListRepository<T> {
   isEmpty: () => boolean;
   size: () => number;
   getHead: () => undefined | Node<T>;
+  clear: () => void;
   toString: () => string;
 }

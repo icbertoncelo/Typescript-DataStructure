@@ -1,13 +1,12 @@
 import { ILinkedListRepository } from "./ILinkedListRepository";
-import { defaultEquals } from "../..//utils";
+import { defaultEquals, IEqualsFunction } from "../..//utils";
 import { Node } from "../models";
 
 export class LinkedList<T> implements ILinkedListRepository<T> {
-  private count: number;
-  private head: Node<T> | undefined;
-  private equalsFn: (a: T, b: T) => boolean;
+  protected count: number;
+  protected head: Node<T> | undefined;
 
-  constructor(equalsFn = defaultEquals) {
+  constructor(protected equalsFn: IEqualsFunction<T> = defaultEquals) {
     this.count = 0;
     this.head = undefined;
     this.equalsFn = equalsFn;
@@ -32,7 +31,7 @@ export class LinkedList<T> implements ILinkedListRepository<T> {
   }
 
   insert(element: T, index: number) {
-    if (index < 0 && index >= this.count) {
+    if (index < 0 && index > this.count) {
       return;
     }
 
@@ -53,7 +52,7 @@ export class LinkedList<T> implements ILinkedListRepository<T> {
   }
 
   getElementAt(index: number) {
-    if (index < 0 && index >= this.count) {
+    if (index < 0 && index > this.count) {
       return undefined;
     }
 
@@ -114,6 +113,11 @@ export class LinkedList<T> implements ILinkedListRepository<T> {
 
   getHead() {
     return this.head;
+  }
+
+  clear() {
+    this.head = undefined;
+    this.count = 0;
   }
 
   toString() {

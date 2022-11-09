@@ -4,3 +4,6 @@
 
 - Stack
 - Queue
+- Deck
+- Linked List
+- Doubly Linked List
