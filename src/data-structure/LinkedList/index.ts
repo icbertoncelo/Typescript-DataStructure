@@ -36,14 +36,14 @@ export class LinkedList<T> implements ILinkedListRepository<T> {
     }
 
     const node = new Node<T>(element);
+    let current = this.head;
 
     if (index === 0) {
-      const current = this.head;
       node.next = current;
       this.head = node;
     } else {
       const previous = this.getElementAt(index - 1);
-      const current = previous.next;
+      current = previous.next;
       previous.next = node;
       node.next = current;
     }
