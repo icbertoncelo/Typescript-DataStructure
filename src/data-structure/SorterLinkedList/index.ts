@@ -8,7 +8,7 @@ import {
   Compare,
 } from "../../utils";
 
-export class CircularLinkedList<T>
+export class SortedLinkedList<T>
   extends LinkedList<T>
   implements ISortedLinkedListRepository<T>
 {

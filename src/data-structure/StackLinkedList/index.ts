@@ -1,7 +1,7 @@
 import { IStackLinkedListRepository } from "./IStackLinkedListRepository";
 import { DoublyLinkedList } from "../DoublyLinkedList";
 
-export class LinkedList<T> implements IStackLinkedListRepository<T> {
+export class StackLinkedList<T> implements IStackLinkedListRepository<T> {
   private items: DoublyLinkedList<T>;
 
   constructor() {
